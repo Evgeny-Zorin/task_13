@@ -6,8 +6,7 @@
 #include<list>
 #include<string>
 //#include <functional>
-#define DEBUG	//определяет режим компиляции кода (отладочный\тихий)
-
+#define DEBUG	//Г®ГЇГ°ГҐГ¤ГҐГ«ГїГҐГІ Г°ГҐГ¦ГЁГ¬ ГЄГ®Г¬ГЇГЁГ«ГїГ¶ГЁГЁ ГЄГ®Г¤Г  (Г®ГІГ«Г Г¤Г®Г·Г­Г»Г©\ГІГЁГµГЁГ©)
 using namespace std;
 
 class Node
@@ -25,10 +24,10 @@ public:
 	
 	//Node& operator=(const Node& _copy)
 //{
-//	if (this == &_copy)		// проверка на самоприсваивание
+//	if (this == &_copy)		// ГЇГ°Г®ГўГҐГ°ГЄГ  Г­Г  Г±Г Г¬Г®ГЇГ°ГЁГ±ГўГ ГЁГўГ Г­ГЁГҐ
 //		return *this;
 //	Name = _copy.Name; Duty = _copy.Duty; Price = _copy.Price;
-//	cout << "\tСработал operator=." << endl;
+//	cout << "\tГ‘Г°Г ГЎГ®ГІГ Г« operator=." << endl;
 //	return *this;
 //}
 	
@@ -48,14 +47,14 @@ public:
 
 using iT = std::list<Node*>::iterator;
 
-bool input_text(string file_name, list<Node*>& _my_List);		//считывание из файла
-bool RandomCase(string file_name);								//создание файла исходных(условно-случайных) записей
-bool list_size(const list<Node*>& _my_List);					//проверка размерности листа с печатью
-void process_cmp(list<Node*>& _my_List);						//суммирую повторы
-void list_c_print(list<Node*>& _my_List, string str = "\t");	//печать листа
-bool list_f_print(const string file_name,const list<Node*>& _my_List, const int _take_duty);	//вывод в файл
+bool input_text(string file_name, list<Node*>& _my_List);		//Г±Г·ГЁГІГ»ГўГ Г­ГЁГҐ ГЁГ§ ГґГ Г©Г«Г 
+bool RandomCase(string file_name);								//Г±Г®Г§Г¤Г Г­ГЁГҐ ГґГ Г©Г«Г  ГЁГ±ГµГ®Г¤Г­Г»Гµ(ГіГ±Г«Г®ГўГ­Г®-Г±Г«ГіГ·Г Г©Г­Г»Гµ) Г§Г ГЇГЁГ±ГҐГ©
+bool list_size(const list<Node*>& _my_List);					//ГЇГ°Г®ГўГҐГ°ГЄГ  Г°Г Г§Г¬ГҐГ°Г­Г®Г±ГІГЁ Г«ГЁГ±ГІГ  Г± ГЇГҐГ·Г ГІГјГѕ
+void process_cmp(list<Node*>& _my_List);						//Г±ГіГ¬Г¬ГЁГ°ГіГѕ ГЇГ®ГўГІГ®Г°Г»
+void list_c_print(list<Node*>& _my_List, string str = "\t");	//ГЇГҐГ·Г ГІГј Г«ГЁГ±ГІГ 
+bool list_f_print(const string file_name,const list<Node*>& _my_List, const int _take_duty);	//ГўГ»ГўГ®Г¤ Гў ГґГ Г©Г«
 
-bool comp_sort(const Node* x, const Node* y);//предикат для std::list::sort()  лексикографическая проверка
+bool comp_sort(const Node* x, const Node* y);//ГЇГ°ГҐГ¤ГЁГЄГ ГІ Г¤Г«Гї std::list::sort()  Г«ГҐГЄГ±ГЁГЄГ®ГЈГ°Г ГґГЁГ·ГҐГ±ГЄГ Гї ГЇГ°Г®ГўГҐГ°ГЄГ 
 void del_list(list<Node*>& _my_List);
 
 class SimpleTimer
