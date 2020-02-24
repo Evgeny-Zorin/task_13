@@ -1,6 +1,6 @@
-#include"Task_13b_string_New.h"
+#include"Task_13b.h"
 
-const string Node::my_name[]{	//определение статического поля
+const string Node::my_name[]{	//Г®ГЇГ°ГҐГ¤ГҐГ«ГҐГ­ГЁГҐ Г±ГІГ ГІГЁГ·ГҐГ±ГЄГ®ГЈГ® ГЇГ®Г«Гї
 
 		"Name_A", "Name_B", "Name_C", "Name_D", "Name_E", "Name_F",
 		"Name_G", "Name_H", "Name_I", "Name_J", "Name_K", "Name_L"
@@ -14,10 +14,10 @@ const string Node::Get_name_rand(const unsigned int i)
 }
 
 
-bool input_text(string file_name, list<Node*>& _my_List)	//связываем поток с файлом и читаем
+bool input_text(string file_name, list<Node*>& _my_List)	//Г±ГўГїГ§Г»ГўГ ГҐГ¬ ГЇГ®ГІГ®ГЄ Г± ГґГ Г©Г«Г®Г¬ ГЁ Г·ГЁГІГ ГҐГ¬
 {
 	ifstream fin;
-	fin.open(file_name, ios_base::in);			//режим открытия файла-по умолчанию
+	fin.open(file_name, ios_base::in);			//Г°ГҐГ¦ГЁГ¬ Г®ГІГЄГ°Г»ГІГЁГї ГґГ Г©Г«Г -ГЇГ® ГіГ¬Г®Г«Г·Г Г­ГЁГѕ
 	if (!fin.is_open())
 	{
 #ifdef DEBUG
@@ -44,7 +44,7 @@ bool list_size(const list<Node*>& _my_List)
 {
 	if (!_my_List.empty())
 	{
-		cout << "Прочитано: " << _my_List.size() << " записей." << endl;
+		cout << "ГЏГ°Г®Г·ГЁГІГ Г­Г®: " << _my_List.size() << " Г§Г ГЇГЁГ±ГҐГ©." << endl;
 		return true;
 	}
 	else
@@ -59,7 +59,7 @@ bool RandomCase(string file_name)
 {				
 	int numb;
 #ifdef DEBUG
-	cout << "Для заполнения файл исходными данными введите число элементов: " << endl;
+	cout << "Г„Г«Гї Г§Г ГЇГ®Г«Г­ГҐГ­ГЁГї ГґГ Г©Г« ГЁГ±ГµГ®Г¤Г­Г»Г¬ГЁ Г¤Г Г­Г­Г»Г¬ГЁ ГўГўГҐГ¤ГЁГІГҐ Г·ГЁГ±Г«Г® ГЅГ«ГҐГ¬ГҐГ­ГІГ®Гў: " << endl;
 	cin >> numb;
 	cin.get();
 #else
@@ -79,7 +79,7 @@ bool RandomCase(string file_name)
 		return false;
 	}
 	else {
-		srand(static_cast <unsigned int> (time(NULL)));		// Инициализация генератора случайных чисел
+		srand(static_cast <unsigned int> (time(NULL)));		// Г€Г­ГЁГ¶ГЁГ Г«ГЁГ§Г Г¶ГЁГї ГЈГҐГ­ГҐГ°Г ГІГ®Г°Г  Г±Г«ГіГ·Г Г©Г­Г»Гµ Г·ГЁГ±ГҐГ«
 		
 		Node* my_buf = new Node();
 		for (int i = 0; i < numb; i++)
@@ -96,7 +96,7 @@ bool RandomCase(string file_name)
 	return true;
 }
 
-void process_cmp(list<Node*>& _my_List)	//суммирую повторы
+void process_cmp(list<Node*>& _my_List)	//Г±ГіГ¬Г¬ГЁГ°ГіГѕ ГЇГ®ГўГІГ®Г°Г»
 {
 	iT End = _my_List.end();
 
@@ -153,9 +153,9 @@ bool list_f_print(const string file_name, const list<Node*>& _my_List, const int
 }
 
 
-bool comp_sort(const Node* x, const Node* y)	//предикат для std::list::sort()
+bool comp_sort(const Node* x, const Node* y)	//ГЇГ°ГҐГ¤ГЁГЄГ ГІ Г¤Г«Гї std::list::sort()
 {
-	return (x->Name < y->Name);	// лексикографическая проверка
+	return (x->Name < y->Name);	// Г«ГҐГЄГ±ГЁГЄГ®ГЈГ°Г ГґГЁГ·ГҐГ±ГЄГ Гї ГЇГ°Г®ГўГҐГ°ГЄГ 
 }
 
 void del_list(list<Node*>& _my_List)
